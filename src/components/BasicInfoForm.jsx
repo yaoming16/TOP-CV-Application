@@ -21,6 +21,7 @@ function BasicInfoForm({ cvData, setCvData }) {
                 label="Email"
                 value={cvData.email}
                 setValue={updateField("email")}
+                type="email"
             />
             <Input
                 label="Phone Number"

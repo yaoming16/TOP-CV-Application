@@ -12,17 +12,18 @@ function App() {
         phoneNumber: "+598 94 497 982",
         city: "Montevideo",
         country: "Uruguay",
+        jobs: [],
     });
 
     return (
         <>
             <main className="main">
-                <section>
+                <aside>
                     <FormsSection cvData={cvData} setCvData={setCvData}/>
-                </section>
-                <section>
+                </aside>
+                <article>
                     <View cvData={cvData} />
-                </section>
+                </article>
             </main>
             <footer>
 

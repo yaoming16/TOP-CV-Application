@@ -1,13 +1,13 @@
-function Input({ label, value, setValue }) {
+function Input({ label, name = null,  value = null, setValue = null, type = "text"}) {
     return (
         <div>
-            <label htmlFor={`input-${label}`}>{label}</label>
+            <label htmlFor={`input-${label ? label : name}`}>{label}</label>
             <input
-                type="text"
-                id={`input-${label}`}
-                name={label}
-                value={value}
-                onChange={(event) => setValue(event.target.value)}
+                type={type}
+                id={`input-${label ? label : name}`}
+                name={name? name : label}
+                value={value ? value : undefined}
+                onChange={(event) => setValue?.(event.target.value)}
             ></input>
         </div>
     );
