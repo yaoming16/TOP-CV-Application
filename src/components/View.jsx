@@ -32,6 +32,24 @@ function View({ cvData }) {
           ))}
         </ul>
       </section>
+      <section>
+        <h2>Education</h2>
+        <ul>
+          {cvData.education.map((ed) => (
+            <li id={ed.id} key={ed.id}>
+              <article>
+                <header>
+                  <h3>{ed.educationTitle}</h3>
+                  <p>{ed.schoolName}</p>
+                  <p>
+                    {ed.startingDate} to {ed.endingDate || "Present"}
+                  </p>
+                </header>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

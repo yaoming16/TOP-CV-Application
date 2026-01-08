@@ -4,6 +4,7 @@ import "./styles/App.css";
 import  View  from "./components/View.jsx";
 import FormsSection from "./components/FormsSection.jsx"
 
+
 function App() {
     const [cvData, setCvData] = useState({
         name: "Pablo",
@@ -13,6 +14,7 @@ function App() {
         city: "Montevideo",
         country: "Uruguay",
         jobs: [],
+        education: [],
     });
 
     return (
