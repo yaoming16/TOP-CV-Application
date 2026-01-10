@@ -3,6 +3,7 @@ import CollectionForm from "./CollectionForm";
 function JobsForm({ setCvData }) {
   return (
     <CollectionForm
+      submitLabel="Add Job"
       fields={[
         { label: "Company Name", name: "companyName" },
         { label: "Position Title", name: "positionTitle" },

@@ -1,12 +1,10 @@
 import CollectionForm from "./CollectionForm";
 
-function SkillsForm() {
+function SkillsForm({ setCvData }) {
   return (
     <CollectionForm
-      fields={[
-        { label: "Skill", name: "skill" },
-        { label: "More details", name: "details" },
-      ]}
+      submitLabel="Add Skill"
+      fields={[{ label: "Skill", name: "skill" }]}
       setData={(values) =>
         setCvData((prev) => ({
           ...prev,

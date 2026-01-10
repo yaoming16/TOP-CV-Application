@@ -65,6 +65,38 @@ function View({ cvData }) {
           ))}
         </ul>
       </section>
+      <section id="certificationsSection">
+        <h2>Certifications</h2>
+        <ul>
+          {cvData.certifications.map((cert) => (
+            <li id={cert.id} key={cert.id}>
+              <article>
+                <header>
+                  <h3>{cert.certification}</h3>
+                  <p>{cert.institution}</p>
+                  <p>
+                    {cert.startingDate} to {cert.endingDate || "Present"}
+                  </p>
+                </header>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section id="skillsSection">
+        <h2>Skills</h2>
+        <ul>
+          {cvData.skills.map((skill) => (
+            <li id={skill.id} key={skill.id}>
+              <article>
+                <header>
+                  <h3>{skill.skill}</h3>
+                </header>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
