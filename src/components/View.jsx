@@ -1,7 +1,7 @@
 function View({ cvData }) {
   return (
     <div>
-      <header>
+      <header id="basicInfoSection">
         <h1>
           {cvData.name} {cvData.lastName}
         </h1>
@@ -13,7 +13,7 @@ function View({ cvData }) {
           </p>
         </address>
       </header>
-      <section>
+      <section id="workExperienceSection">
         <h2>Work Experience</h2>
         <ul>
           {cvData.jobs.map((job) => (
@@ -32,7 +32,7 @@ function View({ cvData }) {
           ))}
         </ul>
       </section>
-      <section>
+      <section id="educationSection">
         <h2>Education</h2>
         <ul>
           {cvData.education.map((ed) => (
@@ -44,6 +44,21 @@ function View({ cvData }) {
                   <p>
                     {ed.startingDate} to {ed.endingDate || "Present"}
                   </p>
+                </header>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section id="languageSection">
+        <h2>Languages</h2>
+        <ul>
+          {cvData.languages.map((lang) => (
+            <li id={lang.id} key={lang.id}>
+              <article>
+                <header>
+                  <h3>{lang.language}</h3>
+                  <p>{lang.level}</p>
                 </header>
               </article>
             </li>

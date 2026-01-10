@@ -15,6 +15,8 @@ function App() {
         country: "Uruguay",
         jobs: [],
         education: [],
+        languages: [],
+        skills: [],
     });
 
     return (

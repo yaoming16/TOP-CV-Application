@@ -10,7 +10,7 @@ function Accordion({ content, title }) {
   const currentHeight = contentEl.current?.scrollHeight || 0;
 
   return (
-    <div className={`accordion-item ${isOpen ? "active" : ""}`}>
+    <section className={`accordion-item ${isOpen ? "active" : ""}`}>
       <button
         type="button"
         className="accordion-title"
@@ -27,7 +27,7 @@ function Accordion({ content, title }) {
       >
         <div className="content">{content}</div>
       </div>
-    </div>
+    </section>
   );
 }
 
