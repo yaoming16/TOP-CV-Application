@@ -1,12 +1,15 @@
 import CollectionForm from "./CollectionForm";
+import { useCv } from "../../context/CvContext.jsx";
 
-function SkillsForm({ setCvData }) {
+function SkillsForm() {
+  const { cv, setCv } = useCv();
   return (
     <CollectionForm
       submitLabel="Add Skill"
+      infoArray={cv.skills}
       fields={[{ label: "Skill", name: "skill" }]}
       setData={(values) =>
-        setCvData((prev) => ({
+        setCv((prev) => ({
           ...prev,
           skills: [...prev.skills, { ...values, id: crypto.randomUUID() }],
         }))

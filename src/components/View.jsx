@@ -1,4 +1,7 @@
-function View({ cvData }) {
+import { useCv } from "../context/CvContext.jsx";
+
+function View() {
+  const { cv: cvData } = useCv();
   return (
     <div>
       <header id="basicInfoSection">

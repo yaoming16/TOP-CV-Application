@@ -8,7 +8,7 @@ import Certifications from "./Forms/Certifications";
 
 import "../styles/FormsSection.css";
 
-function FormsSection({ cvData, setCvData }) {
+function FormsSection() {
   return (
     <section aria-labelledby="forms-heading">
       <h2 id="forms-heading" className="visually-hidden">
@@ -16,28 +16,28 @@ function FormsSection({ cvData, setCvData }) {
       </h2>
 
       <Accordion
-        content={<BasicInfoForm cvData={cvData} setCvData={setCvData} />}
+        content={<BasicInfoForm />}
         title="Basic Information"
       />
 
       <Accordion
-        content={<EducationForm setCvData={setCvData} />}
+        content={<EducationForm />}
         title="Education"
       />
 
-      <Accordion content={<JobsForm setCvData={setCvData} />} title="Jobs" />
+      <Accordion content={<JobsForm />} title="Jobs" />
 
       <Accordion
-        content={<Languages setCvData={setCvData} />}
+        content={<Languages />}
         title="Languages"
       />
       <Accordion
-        content={<Certifications setCvData={setCvData} />}
+        content={<Certifications />}
         title="Certifications"
       />
 
       <Accordion
-        content={<SkillsForm setCvData={setCvData} />}
+        content={<SkillsForm />}
         title="Skills"
       />
     </section>

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useCv } from "../../context/CvContext.jsx";
 
 import Input from "../Input";
 import TextArea from "../TextArea";
 
-function CollectionForm({ fields, setData, submitLabel = "Add" }) {
+function CollectionForm({ fields, setData, submitLabel = "Add", infoArray }) {
   let [showForm, setShowForm] = useState(false);
+  const { cv, setCv } = useCv();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -17,6 +19,10 @@ function CollectionForm({ fields, setData, submitLabel = "Add" }) {
     setData(values);
     event.target.reset();
     setShowForm(!showForm);
+  }
+
+  function deleteData(id) {
+    infoArray.find();
   }
 
   return (
@@ -34,11 +40,22 @@ function CollectionForm({ fields, setData, submitLabel = "Add" }) {
               />
             );
           })}
-          <button type="submit">{submitLabel}</button>
+          <div>
+            <button onClick={() => setShowForm(!showForm)}>Cancel</button>
+            <button type="submit">{submitLabel}</button>
+          </div>
         </form>
       ) : null}
       {!showForm ? (
-        <button onClick={() => setShowForm(!showForm)}>{submitLabel}</button>
+        <>
+          {infoArray.map((info) => (
+            <div key={info.id}>
+              <p>{Object.values(info)[0]}</p>
+              <button onClick={() => deleteData(info.id)}>X</button>
+            </div>
+          ))}
+          <button onClick={() => setShowForm(!showForm)}>{submitLabel}</button>
+        </>
       ) : null}
     </>
   );

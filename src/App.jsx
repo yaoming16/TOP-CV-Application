@@ -1,37 +1,22 @@
-import { useState } from "react";
-
 import "./styles/App.css";
 import View from "./components/View.jsx";
 import FormsSection from "./components/FormsSection.jsx";
 import Certifications from "./components/Forms/Certifications.jsx";
+import { CvProvider } from "./context/CvContext.jsx";
 
 function App() {
-  const [cvData, setCvData] = useState({
-    name: "Pablo",
-    lastName: "Perez",
-    email: "pabloperezzz16@gmail.com",
-    phoneNumber: "+598 94 497 982",
-    city: "Montevideo",
-    country: "Uruguay",
-    jobs: [],
-    education: [],
-    languages: [],
-    skills: [],
-    certifications: [],
-  });
-
   return (
-    <>
+    <CvProvider>
       <main className="main">
         <aside>
-          <FormsSection cvData={cvData} setCvData={setCvData} />
+          <FormsSection />
         </aside>
         <article>
-          <View cvData={cvData} />
+          <View />
         </article>
       </main>
       <footer></footer>
-    </>
+    </CvProvider>
   );
 }
 

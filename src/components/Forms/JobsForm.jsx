@@ -1,9 +1,12 @@
 import CollectionForm from "./CollectionForm";
+import { useCv } from "../../context/CvContext.jsx";
 
-function JobsForm({ setCvData }) {
+function JobsForm() {
+  const { cv, setCv } = useCv();
   return (
     <CollectionForm
       submitLabel="Add Job"
+      infoArray={cv.jobs}
       fields={[
         { label: "Company Name", name: "companyName" },
         { label: "Position Title", name: "positionTitle" },
@@ -16,7 +19,7 @@ function JobsForm({ setCvData }) {
         { label: "Ending Date", name: "endingDate", type: "date" },
       ]}
       setData={(values) =>
-        setCvData((prev) => ({
+        setCv((prev) => ({
           ...prev,
           jobs: [...prev.jobs, { ...values, id: crypto.randomUUID() }],
         }))

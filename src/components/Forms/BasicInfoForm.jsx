@@ -1,8 +1,10 @@
 import Input from "../Input";
+import { useCv } from "../../context/CvContext.jsx";
 
-function BasicInfoForm({ cvData, setCvData }) {
+function BasicInfoForm() {
+  const { cv: cvData, setCv } = useCv();
   const updateField = (field) => (value) => {
-    setCvData((prev) => ({ ...prev, [field]: value }));
+    setCv((prev) => ({ ...prev, [field]: value }));
   };
 
   return (

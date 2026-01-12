@@ -1,0 +1,29 @@
+import { createContext, useContext, useState } from "react";
+
+export const CvContext = createContext(null);
+
+export function CvProvider({ children }) {
+  const [cv, setCv] = useState({
+    name: "Pablo",
+    lastName: "Perez",
+    email: "pabloperezzz16@gmail.com",
+    phoneNumber: "+598 94 497 982",
+    city: "Montevideo",
+    country: "Uruguay",
+    jobs: [],
+    education: [],
+    languages: [],
+    skills: [],
+    certifications: [],
+  });
+
+  return (
+    <CvContext.Provider value={{ cv, setCv }}>{children}</CvContext.Provider>
+  );
+}
+
+export function useCv() {
+  const ctx = useContext(CvContext);
+  if (!ctx) throw new Error("useCv must be used within a CvProvider");
+  return ctx;
+}

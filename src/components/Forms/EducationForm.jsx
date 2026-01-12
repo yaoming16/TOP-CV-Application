@@ -1,9 +1,12 @@
 import CollectionForm from "./CollectionForm";
+import { useCv } from "../../context/CvContext.jsx";
 
-function EducationForm({ setCvData }) {
+function EducationForm() {
+  const { cv, setCv } = useCv();
   return (
     <CollectionForm
       submitLabel="Add Education"
+      infoArray={cv.education}
       fields={[
         { label: "School Name", name: "schoolName" },
         { label: "Title", name: "educationTitle" },
@@ -11,7 +14,7 @@ function EducationForm({ setCvData }) {
         { label: "Ending Date", name: "endingDate", type: "date" },
       ]}
       setData={(values) =>
-        setCvData((prev) => ({
+        setCv((prev) => ({
           ...prev,
           education: [
             ...prev.education,
