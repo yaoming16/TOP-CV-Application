@@ -9,27 +9,27 @@ function BasicInfoForm() {
 
   return (
     <form>
-      <Input label="Name" value={cvData.name} setValue={updateField("name")} />
+      <Input label="Name" value={cvData.basic.name} setValue={updateField("name")} />
       <Input
         label="Last Name"
-        value={cvData.lastName}
+        value={cvData.basic.lastName}
         setValue={updateField("lastName")}
       />
       <Input
         label="Email"
-        value={cvData.email}
+        value={cvData.basic.email}
         setValue={updateField("email")}
         type="email"
       />
       <Input
         label="Phone Number"
-        value={cvData.phoneNumber}
+        value={cvData.basic.phoneNumber}
         setValue={updateField("phoneNumber")}
       />
-      <Input label="City" value={cvData.city} setValue={updateField("city")} />
+      <Input label="City" value={cvData.basic.city} setValue={updateField("city")} />
       <Input
         label="Country"
-        value={cvData.country}
+        value={cvData.basic.country}
         setValue={updateField("country")}
       />
     </form>

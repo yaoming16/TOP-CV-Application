@@ -1,13 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function Accordion({ content, title }) {
   // State to open/close
   const [isOpen, setIsOpen] = useState(false);
 
   //Ref to mesure height
-  const contentEl = useRef();
+  const contentEl = useRef(null);
 
-  const currentHeight = contentEl.current?.scrollHeight || 0;
+  let currentHeight = contentEl.current?.scrollHeight || 0;
 
   return (
     <section className={`accordion-item ${isOpen ? "active" : ""}`}>

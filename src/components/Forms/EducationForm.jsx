@@ -7,6 +7,7 @@ function EducationForm() {
     <CollectionForm
       submitLabel="Add Education"
       infoArray={cv.education}
+      arrayName="education"
       fields={[
         { label: "School Name", name: "schoolName" },
         { label: "Title", name: "educationTitle" },

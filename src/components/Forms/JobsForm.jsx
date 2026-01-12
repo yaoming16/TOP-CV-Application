@@ -7,6 +7,7 @@ function JobsForm() {
     <CollectionForm
       submitLabel="Add Job"
       infoArray={cv.jobs}
+      arrayName="jobs"
       fields={[
         { label: "Company Name", name: "companyName" },
         { label: "Position Title", name: "positionTitle" },

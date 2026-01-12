@@ -4,7 +4,7 @@ import { useCv } from "../../context/CvContext.jsx";
 import Input from "../Input";
 import TextArea from "../TextArea";
 
-function CollectionForm({ fields, setData, submitLabel = "Add", infoArray }) {
+function CollectionForm({ fields, submitLabel = "Add", setData, infoArray, arrayName }) {
   let [showForm, setShowForm] = useState(false);
   const { cv, setCv } = useCv();
 
@@ -22,7 +22,10 @@ function CollectionForm({ fields, setData, submitLabel = "Add", infoArray }) {
   }
 
   function deleteData(id) {
-    infoArray.find();
+    setCv((prev) => ({
+      ...prev,
+      [arrayName]: prev[arrayName].filter((item) => item.id !== id),
+    }));
   }
 
   return (

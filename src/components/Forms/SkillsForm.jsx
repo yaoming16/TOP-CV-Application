@@ -7,6 +7,7 @@ function SkillsForm() {
     <CollectionForm
       submitLabel="Add Skill"
       infoArray={cv.skills}
+      arrayName="skills"
       fields={[{ label: "Skill", name: "skill" }]}
       setData={(values) =>
         setCv((prev) => ({

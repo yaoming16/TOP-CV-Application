@@ -4,12 +4,14 @@ export const CvContext = createContext(null);
 
 export function CvProvider({ children }) {
   const [cv, setCv] = useState({
-    name: "Pablo",
-    lastName: "Perez",
-    email: "pabloperezzz16@gmail.com",
-    phoneNumber: "+598 94 497 982",
-    city: "Montevideo",
-    country: "Uruguay",
+    basic: {
+      name: "Pablo",
+      lastName: "Perez",
+      email: "pabloperezzz16@gmail.com",
+      phoneNumber: "+598 94 497 982",
+      city: "Montevideo",
+      country: "Uruguay",
+    },
     jobs: [],
     education: [],
     languages: [],

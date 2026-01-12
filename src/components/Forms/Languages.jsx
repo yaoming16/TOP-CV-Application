@@ -7,6 +7,7 @@ function Languages() {
     <CollectionForm
       submitLabel="Add Language"
       infoArray={cv.languages}
+      arrayName="languages"
       fields={[
         { label: "Language", name: "language" },
         { label: "Level", name: "level" },

@@ -7,6 +7,7 @@ function Certifications() {
     <CollectionForm
       submitLabel="Add Certificate"
       infoArray={cv.certifications}
+      arrayName="certifications"
       fields={[
         { label: "Certification name", name: "certification" },
         { label: "Institution", name: "institution" },

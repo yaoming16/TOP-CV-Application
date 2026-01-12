@@ -6,13 +6,13 @@ function View() {
     <div>
       <header id="basicInfoSection">
         <h1>
-          {cvData.name} {cvData.lastName}
+          {cvData.basic.name} {cvData.lastName}
         </h1>
         <address>
-          <p>{cvData.email}</p>
-          <p>{cvData.phoneNumber}</p>
+          <p>{cvData.basic.email}</p>
+          <p>{cvData.basic.phoneNumber}</p>
           <p>
-            {cvData.city} {cvData.country}
+            {cvData.basic.city} {cvData.basic.country}
           </p>
         </address>
       </header>
