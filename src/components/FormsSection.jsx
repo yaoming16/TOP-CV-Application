@@ -10,37 +10,39 @@ import "../styles/FormsSection.css";
 
 function FormsSection() {
   return (
-    <section aria-labelledby="forms-heading">
-      <h2 id="forms-heading" className="visually-hidden">
-        CV forms
-      </h2>
+    <>
+      <section aria-labelledby="forms-heading">
+        <h2 id="forms-heading" className="visually-hidden">
+          CV forms
+        </h2>
 
-      <Accordion
-        content={<BasicInfoForm />}
-        title="Basic Information"
-      />
+        <Accordion
+          content={<BasicInfoForm />}
+          title="Basic Information"
+        />
 
-      <Accordion
-        content={<EducationForm />}
-        title="Education"
-      />
+        <Accordion
+          content={<EducationForm />}
+          title="Education"
+        />
 
-      <Accordion content={<JobsForm />} title="Jobs" />
+        <Accordion content={<JobsForm />} title="Jobs" />
 
-      <Accordion
-        content={<Languages />}
-        title="Languages"
-      />
-      <Accordion
-        content={<Certifications />}
-        title="Certifications"
-      />
+        <Accordion
+          content={<Languages />}
+          title="Languages"
+        />
+        <Accordion
+          content={<Certifications />}
+          title="Certifications"
+        />
 
-      <Accordion
-        content={<SkillsForm />}
-        title="Skills"
-      />
-    </section>
+        <Accordion
+          content={<SkillsForm />}
+          title="Skills"
+        />
+      </section>
+    </>
   );
 }
 

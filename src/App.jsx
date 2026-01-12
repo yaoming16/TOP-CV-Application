@@ -1,15 +1,21 @@
 import "./styles/App.css";
 import View from "./components/View.jsx";
 import FormsSection from "./components/FormsSection.jsx";
-import Certifications from "./components/Forms/Certifications.jsx";
+import CustomizationSection from "./components/CustomizationSection.jsx";
 import { CvProvider } from "./context/CvContext.jsx";
 
+import { useState } from "react";
+
 function App() {
+  let [showForm, setShowForm] = useState(true);
   return (
     <CvProvider>
       <main className="main">
         <aside>
-          <FormsSection />
+          <button onClick={() => setShowForm(!showForm)}>Customization</button>
+          {
+            showForm? <FormsSection /> : <CustomizationSection />
+          }
         </aside>
         <article>
           <View />
