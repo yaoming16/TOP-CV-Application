@@ -4,11 +4,11 @@ import { useCv } from "../../context/CvContext.jsx";
 function BasicInfoForm() {
   const { cv: cvData, setCv } = useCv();
   const updateField = (field) => (value) => {
-    setCv((prev) => ({ ...prev, [field]: value }));
+    setCv((prev) => ({ ...prev, basic: { ...prev.basic, [field]: value } }));
   };
 
   return (
-    <form>
+    <form className="form">
       <Input label="Name" value={cvData.basic.name} setValue={updateField("name")} />
       <Input
         label="Last Name"

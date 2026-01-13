@@ -1,6 +1,6 @@
 function Input({ label, name = null,  value = null, setValue = null, type = "text"}) {
     return (
-        <div>
+        <div className="form-div">
             <label htmlFor={`input-${label ? label : name}`}>{label}</label>
             <input
                 type={type}

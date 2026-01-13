@@ -11,7 +11,7 @@ import "../styles/FormsSection.css";
 function FormsSection() {
   return (
     <>
-      <section aria-labelledby="forms-heading">
+      <section aria-labelledby="forms-heading" className="form-section form-section-container">
         <h2 id="forms-heading" className="visually-hidden">
           CV forms
         </h2>

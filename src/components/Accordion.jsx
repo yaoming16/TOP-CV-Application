@@ -1,4 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
+import {expandSVG} from "../assets/svgs";
+import "../styles/Accordion.css"
 
 function Accordion({ content, title }) {
   // State to open/close
@@ -18,7 +20,7 @@ function Accordion({ content, title }) {
         aria-expanded={isOpen}
       >
         <h3>{title}</h3>
-        <span>{isOpen ? "-" : "+"}</span>
+        <span className={`svg-span ${isOpen? "rotate " :""}`} >{expandSVG}</span>
       </button>
       <div
         ref={contentEl}

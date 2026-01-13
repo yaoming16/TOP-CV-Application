@@ -4,6 +4,8 @@ import { useCv } from "../../context/CvContext.jsx";
 import Input from "../Input";
 import TextArea from "../TextArea";
 
+import { deleteSVG } from "../../assets/svgs.jsx";
+
 function CollectionForm({ fields, submitLabel = "Add", setData, infoArray, arrayName }) {
   let [showForm, setShowForm] = useState(false);
   const { cv, setCv } = useCv();
@@ -31,7 +33,7 @@ function CollectionForm({ fields, submitLabel = "Add", setData, infoArray, array
   return (
     <>
       {showForm ? (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           {fields.map((field) => {
             const Component = field.component === "textarea" ? TextArea : Input;
             return (
@@ -43,7 +45,7 @@ function CollectionForm({ fields, submitLabel = "Add", setData, infoArray, array
               />
             );
           })}
-          <div>
+          <div className="button-div">
             <button onClick={() => setShowForm(!showForm)}>Cancel</button>
             <button type="submit">{submitLabel}</button>
           </div>
@@ -52,12 +54,14 @@ function CollectionForm({ fields, submitLabel = "Add", setData, infoArray, array
       {!showForm ? (
         <>
           {infoArray.map((info) => (
-            <div key={info.id}>
+            <div key={info.id} className="delete-div">
               <p>{Object.values(info)[0]}</p>
-              <button onClick={() => deleteData(info.id)}>X</button>
+              <button onClick={() => deleteData(info.id)} className="delete-button">{deleteSVG}</button>
             </div>
           ))}
-          <button onClick={() => setShowForm(!showForm)}>{submitLabel}</button>
+          <div className="button-div">
+            <button onClick={() => setShowForm(!showForm)}>{submitLabel}</button>
+          </div>
         </>
       ) : null}
     </>
