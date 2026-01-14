@@ -10,22 +10,61 @@ import { useState } from "react";
 
 function AppContent() {
   let [showForm, setShowForm] = useState(true);
+  let [showOnlyOne, setshowOnlyOne] = useState(false);
+  let [showView, setShowView] = useState(true);
   const { resetCv } = useCv();
+
+  function formSectionToShow() {
+    let component = null;
+    if (showOnlyOne) {
+      if (showForm && !showView) {
+        component = <FormsSection />;
+      } else if (!showForm && !showView) {
+        component = <CustomizationSection />;
+      } else {
+        return null;
+      }
+    } else {
+      component = showForm ? <FormsSection /> : <CustomizationSection />;
+    }
+    return (
+      <section className={!showOnlyOne ? "w-1/3" : "only"}>{component}</section>
+    );
+  }
+
   return (
-    <main className="main">
-      <div className="main-container">
-        <aside className="w-1/3">
-          <div>
-            <button onClick={() => setShowForm(!showForm)}>
-              Customization
+    <main className="main w-full">
+      <div className="w-full">
+        <div className="btn-div">
+          <button className="option-btn" onClick={() => setShowForm(!showForm)}>
+            {showForm ? "Change to Customization" : "Change to Form"}
+          </button>
+          <button className="option-btn" onClick={resetCv}>
+            Load example
+          </button>
+          <button
+            className="option-btn"
+            onClick={() => setshowOnlyOne(!showOnlyOne)}
+          >
+            {showOnlyOne ? "Show form and view" : "Show only view"}
+          </button>
+          {showOnlyOne ? (
+            <button
+              className="option-btn"
+              onClick={() => setShowView(!showView)}
+            >
+              Change to {showView ? "Form" : "View"}
             </button>
-            <button onClick={resetCv}>Load example</button>
-          </div>
-          {showForm ? <FormsSection /> : <CustomizationSection />}
-        </aside>
-        <article className="w-2/3">
-          <View />
-        </article>
+          ) : null}
+        </div>
+        <div className={`main-container ${showOnlyOne ? "show-only-one" : ""}`}>
+          {formSectionToShow()}
+          {showOnlyOne && !showView ? null : (
+            <section className={!showOnlyOne ? "w-2/3" : "only"}>
+              <View />
+            </section>
+          )}
+        </div>
       </div>
     </main>
   );

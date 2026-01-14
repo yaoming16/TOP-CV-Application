@@ -9,8 +9,8 @@ function JobsForm() {
       infoArray={cv.jobs}
       arrayName="jobs"
       fields={[
-        { label: "Company Name", name: "companyName" },
         { label: "Position Title", name: "positionTitle" },
+        { label: "Company Name", name: "companyName" },
         {
           label: "Main responsibilities",
           name: "mainResponsibilities",

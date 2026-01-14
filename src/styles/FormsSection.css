@@ -1,6 +1,6 @@
 .form-section {
-  --border-color: #ccc;
-  --border-radius: 8px;
+  --border-color: var(--border-color);
+  --border-radius: 12px;
   --padding: 2rem;
 }
 
@@ -10,23 +10,39 @@
   justify-content: space-between;
   gap: 2rem;
   padding: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--card-background);
+  box-shadow: var(--shadow-md);
 }
 
 .form-section {
   font-size: 1rem;
 }
 
-.form  input {
-  padding: 0.5rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+.form  input,
+.form  textarea {
+  padding: 0.625rem 0.875rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: var(--text-color);
+}
+
+.form  input:focus,
+.form  textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: #fefeff;
 }
 
 .form  label {
   margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--text-color);
 }
 
 .form {
@@ -38,39 +54,54 @@
 
 
 .accordion-content  button {
-  padding: 0.75rem;
-  background-color: #007bff;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: #fff;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
 }
 
 .accordion-content  button:hover {
-  background-color: #0056b3;
-  scale: 1.10;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.accordion-content  button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
 }
 
 .delete-div .delete-button {
-  padding: 0.5rem;
-  background-color: #dc3545;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   color: #fff;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
 }
 
 .delete-div .delete-button:hover {
-  background-color: #c82333;
-  scale: 1.10;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
 }
 
-.accordin-content button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+.delete-div .delete-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
 
+.accordion-content button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 .button-div {

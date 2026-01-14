@@ -1,8 +1,14 @@
 .accordion-item {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--card-background);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.accordion-item:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .accordion-item h3 {
@@ -21,13 +27,20 @@
   justify-content: space-between;
   padding: 14px 16px;
   font-size: 1rem;
-  background-color: #f6f7fb;
+  font-weight: 500;
+  background: linear-gradient(to right, #f8fafc, #f1f5f9);
   border: none;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.accordion-title:hover {
+  background: linear-gradient(to right, #e0f2fe, #dbeafe);
 }
 
 .accordion-item.active .accordion-title {
-  background-color: #e8ebf5;
+  background: linear-gradient(to right, #dbeafe, #bfdbfe);
+  color: var(--primary-dark);
 }
 
 .accordion-content {

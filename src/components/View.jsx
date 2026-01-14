@@ -6,7 +6,7 @@ import { emailSVG, phoneSVG, locationSVG } from "../assets/svgs.jsx";
 function View() {
   const { cv: cvData } = useCv();
   return (
-    <div className="view-container">
+    <section className="view-container">
       <header id="basicInfoSection">
         <h1>
           {cvData.basic.name} {cvData.basic.lastName}
@@ -109,7 +109,7 @@ function View() {
       {cvData.skills.length > 0 ? (
         <section id="skillsSection">
           <h2>Skills</h2>
-          <ul>
+          <ul className="skills-ul">
             {cvData.skills.map((skill) => (
               <li id={skill.id} key={skill.id}>
                 <article>
@@ -122,7 +122,7 @@ function View() {
           </ul>
         </section>
       ) : null}
-    </div>
+    </section>
   );
 }
 
