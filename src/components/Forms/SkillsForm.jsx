@@ -12,7 +12,7 @@ function SkillsForm() {
       setData={(values) =>
         setCv((prev) => ({
           ...prev,
-          skills: [...prev.skills, { ...values, id: crypto.randomUUID() }],
+          skills: [...prev.skills, { ...values, id: crypto.randomUUID(), show: true }],
         }))
       }
     />

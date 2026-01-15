@@ -19,7 +19,7 @@ function Certifications() {
           ...prev,
           certifications: [
             ...prev.certifications,
-            { ...values, id: crypto.randomUUID() },
+            { ...values, id: crypto.randomUUID(), show: true },
           ],
         }))
       }

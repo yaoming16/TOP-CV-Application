@@ -16,28 +16,31 @@ export const originalCv = {
       positionTitle: "Special Agent",
       companyName: "Division of Security Operations (DSO), U.S. Government",
       mainResponsibilities:
-      "Protective services, crisis response, field investigations, and interagency coordination related to biohazard incidents.",
+        "Protective services, crisis response, field investigations, and interagency coordination related to biohazard incidents.",
       startingDate: "2011-01-01",
       endingDate: "Present",
       id: crypto.randomUUID(),
+      show: true,
     },
     {
       positionTitle: "Federal Agent",
       companyName: "U.S. Government - Anti-Bioterror Task Force",
       mainResponsibilities:
-      "Investigated biohazard threats, conducted intelligence gathering, supported tactical operations, and advised senior leadership on response strategies.",
+        "Investigated biohazard threats, conducted intelligence gathering, supported tactical operations, and advised senior leadership on response strategies.",
       startingDate: "1999-01-01",
       endingDate: "2010-12-31",
       id: crypto.randomUUID(),
+      show: true,
     },
     {
       positionTitle: "Police Officer",
       companyName: "Raccoon City Police Department (RPD)",
       mainResponsibilities:
-      "Patrol duties, emergency response, incident documentation, and public safety operations.",
+        "Patrol duties, emergency response, incident documentation, and public safety operations.",
       startingDate: "1998-09-29",
       endingDate: "1998-10-01",
       id: crypto.randomUUID(),
+      show: true,
     },
   ],
   education: [
@@ -47,6 +50,7 @@ export const originalCv = {
       startingDate: "1997-08-01",
       endingDate: "1998-06-01",
       id: crypto.randomUUID(),
+      show: true,
     },
     {
       educationTitle: "Criminal Investigator Training Program (CITP)",
@@ -54,20 +58,34 @@ export const originalCv = {
       startingDate: "1999-03-01",
       endingDate: "1999-06-01",
       id: crypto.randomUUID(),
+      show: true,
     },
   ],
   languages: [
-    { language: "English", id: crypto.randomUUID(), level: "Native" },
-    { language: "Spanish", id: crypto.randomUUID(), level: "B2" },
+    {
+      language: "English",
+      id: crypto.randomUUID(),
+      level: "Native",
+      show: true,
+    },
+    { language: "Spanish", id: crypto.randomUUID(), level: "B2", show: true },
   ],
   skills: [
-    {  skill: "Crisis management", id: crypto.randomUUID() },
-    {  skill: "Field investigations", id: crypto.randomUUID()  },
-    {  skill: "Protective security detail", id: crypto.randomUUID()  },
-    {  skill: "Defensive driving", id: crypto.randomUUID()  },
-    {  skill: "Negotiation & de-escalation", id: crypto.randomUUID() },
-    {  skill: "First aid & trauma care", id: crypto.randomUUID() },
-    {  skill: "Incident command", id: crypto.randomUUID() },
+    { skill: "Crisis management", id: crypto.randomUUID(), show: true },
+    { skill: "Field investigations", id: crypto.randomUUID(), show: true },
+    {
+      skill: "Protective security detail",
+      id: crypto.randomUUID(),
+      show: true,
+    },
+    { skill: "Defensive driving", id: crypto.randomUUID(), show: true },
+    {
+      skill: "Negotiation & de-escalation",
+      id: crypto.randomUUID(),
+      show: true,
+    },
+    { skill: "First aid & trauma care", id: crypto.randomUUID(), show: true },
+    { skill: "Incident command", id: crypto.randomUUID(), show: true },
   ],
   certifications: [
     {
@@ -76,6 +94,7 @@ export const originalCv = {
       startingDate: "2009-05-01",
       endingDate: "2009-07-01",
       id: crypto.randomUUID(),
+      
     },
   ],
 };

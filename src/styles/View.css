@@ -1,5 +1,4 @@
 .view-container {
-  margin: 0 2rem;
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
@@ -9,57 +8,64 @@
   box-shadow: var(--shadow-lg);
 }
 
-header{
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+header {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
 }
 
-.view-container h1  {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: var(--primary-dark);
-    font-weight: 700;
+.view-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary-dark);
+  font-weight: 700;
 }
 
 .view-container h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-    color: var(--primary-dark);
-    font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  color: var(--primary-dark);
+  font-weight: 600;
 }
 
 .view-container h3 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    color: var(--text-color);
-    font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
-address, address div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 1rem;
+address,
+address div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .skills-ul {
-    list-style-type: disc;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .skills-ul li h3 {
-    font-weight: normal;
-    font-size: 1.25rem;
+  font-weight: normal;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 1000px) {
+  .view-container {
+    margin-left: 2rem;
+  }
 }

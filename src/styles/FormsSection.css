@@ -18,10 +18,13 @@
 
 .form-section {
   font-size: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.form  input,
-.form  textarea {
+.form input,
+.form textarea {
   padding: 0.625rem 0.875rem;
   border: 2px solid #cbd5e1;
   border-radius: 8px;
@@ -31,15 +34,15 @@
   color: var(--text-color);
 }
 
-.form  input:focus,
-.form  textarea:focus {
+.form input:focus,
+.form textarea:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   background-color: #fefeff;
 }
 
-.form  label {
+.form label {
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: var(--text-color);
@@ -52,46 +55,52 @@
   padding: 1rem;
 }
 
-
-.accordion-content  button {
+.accordion-content button {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: #fff;
-  border: none;
+  background: #ffffff;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
 
-.accordion-content  button:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+.accordion-content button:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+  color: #2563eb;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.accordion-content  button:active {
+.accordion-content button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
 
 .delete-div .delete-button {
-  padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: #fff;
-  border: none;
+  padding: 0.65rem 1.25rem;
+  background: #ffffff;
+  color: #dc2626;
+  border: 2px solid #dc2626;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+  text-transform: uppercase;
 }
 
 .delete-div .delete-button:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  background: #fef2f2;
+  border-color: #b91c1c;
+  color: #b91c1c;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
 }
 
 .delete-div .delete-button:active {
@@ -111,7 +120,6 @@
 }
 
 .delete-div {
-  
   font-weight: bold;
   margin-top: 1rem;
   justify-content: space-between;
@@ -123,4 +131,3 @@
   flex-direction: column;
   gap: 0.25rem;
 }
-

@@ -17,7 +17,7 @@ function Languages() {
           ...prev,
           languages: [
             ...prev.languages,
-            { ...values, id: crypto.randomUUID() },
+            { ...values, id: crypto.randomUUID(), show: true },
           ],
         }))
       }

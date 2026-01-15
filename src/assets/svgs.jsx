@@ -147,3 +147,34 @@ export const deleteSVG = (
     </g>
   </svg>
 );
+
+export  const hideInfoSVG = (condition) =>  (
+  <svg
+    width="24px"
+    height="24px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g
+      id="SVGRepo_tracerCarrier"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    ></g>
+    <g id="SVGRepo_iconCarrier">
+      <path
+        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5Zm0 12c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5Zm0-7.5A3 3 0 0 0 9 12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"
+        fill="#1C274C"
+      ></path>
+      {condition ? (
+        <path
+          d="M3 3l18 18"
+          stroke="#1C274C"
+          strokeWidth="2"
+          strokeLinecap="round"
+        ></path>
+      ) : null}
+    </g>
+  </svg>
+);

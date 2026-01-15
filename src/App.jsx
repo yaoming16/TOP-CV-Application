@@ -6,13 +6,19 @@ import FormsSection from "./components/FormsSection.jsx";
 import CustomizationSection from "./components/CustomizationSection.jsx";
 import { CvProvider, useCv } from "./context/CvContext.jsx";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function AppContent() {
   let [showForm, setShowForm] = useState(true);
-  let [showOnlyOne, setshowOnlyOne] = useState(false);
+  let [showOnlyOne, setShowOnlyOne] = useState(false);
   let [showView, setShowView] = useState(true);
   const { resetCv } = useCv();
+
+  useEffect(() => {
+    if(window.innerWidth < 500) {
+      setShowOnlyOne(true);
+    }
+  }, [])
 
   function formSectionToShow() {
     let component = null;
@@ -44,7 +50,7 @@ function AppContent() {
           </button>
           <button
             className="option-btn"
-            onClick={() => setshowOnlyOne(!showOnlyOne)}
+            onClick={() => setShowOnlyOne(!showOnlyOne)}
           >
             {showOnlyOne ? "Show form and view" : "Show only view"}
           </button>

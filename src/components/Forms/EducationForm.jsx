@@ -19,7 +19,7 @@ function EducationForm() {
           ...prev,
           education: [
             ...prev.education,
-            { ...values, id: crypto.randomUUID() },
+            { ...values, id: crypto.randomUUID(), show: true },
           ],
         }))
       }

@@ -22,7 +22,7 @@ function JobsForm() {
       setData={(values) =>
         setCv((prev) => ({
           ...prev,
-          jobs: [...prev.jobs, { ...values, id: crypto.randomUUID() }],
+          jobs: [...prev.jobs, { ...values, id: crypto.randomUUID(), show: true }],
         }))
       }
     />
