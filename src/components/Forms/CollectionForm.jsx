@@ -61,7 +61,7 @@ function CollectionForm({
             );
           })}
           <div className="button-div">
-            <button onClick={() => setShowForm(!showForm)}>Cancel</button>
+            <button onClick={() => setShowForm(!showForm)} title="Discard changes and hide form">Cancel</button>
             <button type="submit">{submitLabel}</button>
           </div>
         </form>
@@ -71,16 +71,18 @@ function CollectionForm({
           {infoArray.map((info) => (
             <div key={info.id} className="delete-div">
               <p>{Object.values(info)[0]}</p>
-              <div>
+              <div className="delete-hide-div">
                 <button
                   className="hide-button"
                   onClick={() => changeShowInfoKey(info.id)}
+                  aria-label={info.show ? "Hide this entry" : "Show this entry"}
                 >
                   {hideInfoSVG(info.show)}
                 </button>
                 <button
                   onClick={() => deleteData(info.id)}
                   className="delete-button"
+                  aria-label="Delete this entry"
                 >
                   {deleteSVG}
                 </button>

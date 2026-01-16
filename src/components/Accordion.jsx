@@ -18,6 +18,7 @@ function Accordion({ content, title }) {
         className="accordion-title"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
+        aria-label={`Expand ${title} section`}
       >
         <h3>{title}</h3>
         <span className={`svg-span ${isOpen? "rotate " :""}`} >{expandSVG}</span>

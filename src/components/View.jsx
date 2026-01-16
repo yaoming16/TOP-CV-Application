@@ -28,7 +28,7 @@ function View() {
           </div>
         </address>
       </header>
-      {cvData.jobs.length > 0 ? (
+      {cvData.jobs.length > 0  && cvData.jobs.some((job) => job.show ) ? (
         <section id="workExperienceSection">
           <h2>Work Experience</h2>
           <ul>
@@ -51,7 +51,7 @@ function View() {
           </ul>
         </section>
       ) : null}
-      {cvData.education.length > 0 ? (
+      {cvData.education.length > 0 && cvData.education.some((ed) => ed.show ) ? (
         <section id="educationSection">
           <h2>Education</h2>
           <ul>
@@ -73,7 +73,7 @@ function View() {
           </ul>
         </section>
       ) : null}
-      {cvData.languages.length > 0 ? (
+      {cvData.languages.length > 0  && cvData.languages.some((job) => job.show ) ? (
         <section id="languageSection">
           <h2>Languages</h2>
           <ul>
@@ -92,7 +92,7 @@ function View() {
           </ul>
         </section>
       ) : null}
-      {cvData.certifications.length > 0 ? (
+      {cvData.certifications.length > 0 && cvData.certifications.some((cert) => cert.show) ? (
         <section id="certificationsSection">
           <h2>Certifications</h2>
           <ul>
@@ -114,7 +114,7 @@ function View() {
           </ul>
         </section>
       ) : null}
-      {cvData.skills.length > 0 ? (
+      {cvData.skills.length > 0 && cvData.skills.some((skill) => skill.show) ? (
         <section id="skillsSection">
           <h2>Skills</h2>
           <ul className="skills-ul">
