@@ -2,8 +2,8 @@
 
 A modern, accessible CV builder application built with React and Vite. Create, customize, and preview your professional CV with an intuitive interface.
 
-![The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application)
-![Live Page](https://top-cv-application-919.pages.dev/)
+- [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application)  
+- [Live Page](https://top-cv-application-919.pages.dev/)  
 
 ## Features
 
@@ -46,7 +46,7 @@ A modern, accessible CV builder application built with React and Vite. Create, c
 ### View
 - **View**: Live preview of the CV with semantic HTML structure
 
-## ♿ Accessibility Features
+## Accessibility Features
 
 This application is built with accessibility in mind:
 
