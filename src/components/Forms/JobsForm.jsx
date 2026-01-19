@@ -17,7 +17,7 @@ function JobsForm() {
           component: "textarea",
         },
         { label: "Starting Date", name: "startingDate", type: "date" },
-        { label: "Ending Date", name: "endingDate", type: "date" },
+        { label: "Ending Date", name: "endingDate", type: "date", required: false },
       ]}
       setData={(values) =>
         setCv((prev) => ({

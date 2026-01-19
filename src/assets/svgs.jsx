@@ -1,6 +1,5 @@
 export const emailSVG = (
   <svg
-    aria-label="Email"
     aria-hidden="true"
     fill="#000000"
     width="16px"
@@ -26,7 +25,6 @@ export const emailSVG = (
 
 export const phoneSVG = (
   <svg
-    aria-label="Phone"
     aria-hidden="true"
     width="24px"
     height="24px"
@@ -52,7 +50,6 @@ export const phoneSVG = (
 
 export const locationSVG = (
   <svg
-    aria-label="Location"
     aria-hidden="true"
     version="1.0"
     id="Layer_1"
@@ -83,7 +80,7 @@ export const locationSVG = (
 
 export const expandSVG = (
   <svg
-    aria-label="Expand"
+    aria-label="Expand Section"
     width="24px"
     height="24px"
     viewBox="0 0 24 24"
@@ -108,7 +105,7 @@ export const expandSVG = (
 
 export const deleteSVG = (
   <svg
-    aria-label="Delete"
+    aria-label="Delete Information"
     width="24px"
     height="24px"
     viewBox="-2.1 -2.1 25.20 25.20"
@@ -158,7 +155,7 @@ export const deleteSVG = (
 
 export  const hideInfoSVG = (condition) =>  (
   <svg
-    aria-label="Hide info"
+    aria-label="Hide information"
     width="24px"
     height="24px"
     viewBox="0 0 24 24"

@@ -12,7 +12,7 @@ function EducationForm() {
         { label: "School Name", name: "schoolName" },
         { label: "Title", name: "educationTitle" },
         { label: "Starting Date", name: "startingDate", type: "date" },
-        { label: "Ending Date", name: "endingDate", type: "date" },
+        { label: "Ending Date", name: "endingDate", type: "date", required: false },
       ]}
       setData={(values) =>
         setCv((prev) => ({

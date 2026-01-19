@@ -21,7 +21,7 @@ function Accordion({ content, title }) {
         aria-label={`Expand ${title} section`}
       >
         <h3>{title}</h3>
-        <span className={`svg-span ${isOpen? "rotate " :""}`} >{expandSVG}</span>
+        <span aria-label={isOpen? "Collapse Section" : "Expand Section"} className={`svg-span ${isOpen? "rotate " :""}`} >{expandSVG}</span>
       </button>
       <div
         ref={contentEl}

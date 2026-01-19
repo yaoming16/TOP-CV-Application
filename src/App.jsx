@@ -15,10 +15,10 @@ function AppContent() {
   const { resetCv } = useCv();
 
   useEffect(() => {
-    if(window.innerWidth < 500) {
+    if (window.innerWidth < 500) {
       setShowOnlyOne(true);
     }
-  }, [])
+  }, []);
 
   function formSectionToShow() {
     let component = null;
@@ -42,15 +42,26 @@ function AppContent() {
     <main className="main w-full">
       <div className="w-full">
         <div className="btn-div">
-          <button className="option-btn" onClick={() => setShowForm(!showForm)}>
+          <button
+            className="option-btn"
+            onClick={() => setShowForm(!showForm)}
+            title="Switch between form and customization sections"
+            aria-pressed={!showForm}
+          >
             {showForm ? "Change to Customization" : "Change to Form"}
           </button>
-          <button className="option-btn" onClick={resetCv}>
+          <button
+            className="option-btn"
+            onClick={resetCv}
+            title="Loads the example data and clears current data"
+          >
             Load example
           </button>
           <button
             className="option-btn"
             onClick={() => setShowOnlyOne(!showOnlyOne)}
+            title="Toggle between showing only one section or both sections"
+            aria-pressed={showOnlyOne}
           >
             {showOnlyOne ? "Show form and view" : "Show only view"}
           </button>
@@ -58,6 +69,8 @@ function AppContent() {
             <button
               className="option-btn"
               onClick={() => setShowView(!showView)}
+              title="Toggle between showing the view or the form/customization section"
+              aria-pressed={!showView}
             >
               Change to {showView ? "Form" : "View"}
             </button>
@@ -80,7 +93,20 @@ function App() {
   return (
     <CvProvider>
       <AppContent />
-      <footer></footer>
+      <footer>
+        <p>
+          Created by
+          <a href="https://github.com/yaoming16" target="_blank" rel="noopener noreferrer">
+            Pablo Perez
+          </a>
+        </p>
+        <p>
+          Learn more
+          <a href="https://yaoming16.github.io/" target="_blank" rel="noopener noreferrer">
+            about me
+          </a>
+        </p>
+      </footer>
     </CvProvider>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCv } from "../../context/CvContext.jsx";
 
 import Input from "../Input";
@@ -14,7 +14,16 @@ function CollectionForm({
   arrayName,
 }) {
   let [showForm, setShowForm] = useState(false);
+  let [message, setMessage] = useState("");
   const { cv, setCv } = useCv();
+
+  // Clear message after 3 seconds
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => setMessage(""), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -27,26 +36,42 @@ function CollectionForm({
     setData(values);
     event.target.reset();
     setShowForm(!showForm);
+    setMessage(`${arrayName.slice(0, -1)} added successfully`);
   }
 
   function deleteData(id) {
+    const itemName = Object.values(infoArray.find(item => item.id === id))[0];
     setCv((prev) => ({
       ...prev,
       [arrayName]: prev[arrayName].filter((item) => item.id !== id),
     }));
+    setMessage(`${itemName} deleted`);
   }
 
   function changeShowInfoKey(id) {
+    const item = infoArray.find(item => item.id === id);
+    const itemName = Object.values(item)[0];
     setCv((prev) => ({
       ...prev,
       [arrayName]: prev[arrayName].map((item) =>
         item.id === id ? { ...item, show: !item.show } : item
       ),
     }));
+    setMessage(`${itemName} ${item.show ? 'hidden' : 'shown'} in preview`);
   }
 
   return (
     <>
+      {/* Screen reader announcement region */}
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="visually-hidden"
+      >
+        {message}
+      </div>
+      
       {showForm ? (
         <form onSubmit={handleSubmit} className="form">
           {fields.map((field) => {
@@ -57,6 +82,7 @@ function CollectionForm({
                 label={field.label}
                 name={field.name}
                 type={field.type}
+                required={field.required !== undefined ? field.required : true}
               />
             );
           })}
