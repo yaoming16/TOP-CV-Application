@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
-import {expandSVG} from "../assets/svgs";
-import "../styles/Accordion.css"
+import { useState, useRef, useEffect } from "react";
+import { expandSVG } from "../assets/svgs";
+import "../styles/Accordion.css";
 
 function Accordion({ content, title }) {
   // State to open/close
@@ -9,7 +9,13 @@ function Accordion({ content, title }) {
   //Ref to mesure height
   const contentEl = useRef(null);
 
-  let currentHeight = contentEl.current?.scrollHeight || 0;
+  useEffect(() => {
+    if (contentEl.current && isOpen) {
+      contentEl.current.style.height = `${contentEl.current.scrollHeight}px`;
+    } else if (contentEl.current) {
+      contentEl.current.style.height = "0px";
+    }
+  }, [content, isOpen]);
 
   return (
     <section className={`accordion-item ${isOpen ? "active" : ""}`}>
@@ -21,13 +27,14 @@ function Accordion({ content, title }) {
         aria-label={`Expand ${title} section`}
       >
         <h3>{title}</h3>
-        <span aria-label={isOpen? "Collapse Section" : "Expand Section"} className={`svg-span ${isOpen? "rotate " :""}`} >{expandSVG}</span>
+        <span
+          aria-label={isOpen ? "Collapse Section" : "Expand Section"}
+          className={`svg-span ${isOpen ? "rotate " : ""}`}
+        >
+          {expandSVG}
+        </span>
       </button>
-      <div
-        ref={contentEl}
-        className="accordion-content"
-        style={{ height: isOpen ? currentHeight : 0 }}
-      >
+      <div ref={contentEl} className="accordion-content">
         <div className="content">{content}</div>
       </div>
     </section>
